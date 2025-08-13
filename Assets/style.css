@@ -646,3 +646,48 @@ html, body {
     font-size: 2.2rem;
   }
 }
+.image-hover-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 300px;   /* fixed width */
+  height: 200px;  /* fixed height */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hover-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes all images uniform without distortion */
+  transition: transform 0.4s ease;
+}
+
+.hover-card:hover img {
+  transform: scale(1.05);
+}
+
+.hover-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+.hover-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
